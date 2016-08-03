@@ -2,7 +2,7 @@ package Impostos;
 
 import orcamentos.*;
 
-public abstract class TaxacaoMaxMin implements Imposto {
+public abstract class TaxacaoMaxMin extends Imposto {
 
 	@Override
 	public double calcula(Orcamento orc) {

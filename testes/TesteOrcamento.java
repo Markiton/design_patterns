@@ -11,7 +11,7 @@ public class TesteOrcamento {
 		Orcamento orc = new Orcamento(5000);
 		orc.adicionaItem(new Item("CANETA", 250));
 		orc.adicionaItem(new Item("LAPIS", 150));
-		Imposto ICC = new ICC();
+		Imposto ICC = new ICC(new ISS());
 		Imposto ICPP = new ICPP();
 		Imposto IKCV = new IKCV();
 		
