@@ -1,4 +1,7 @@
 package Impostos;
+
+import orcamentos.*;
+
 public interface Imposto {
-	public double calcula(double valor);
+	public double calcula(Orcamento orc);
 }

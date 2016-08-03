@@ -1,11 +1,15 @@
 
 package Impostos;
+
+import orcamentos.Orcamento;
+
 public class ISS implements Imposto {
 
 	@Override
-	public double calcula(double valor) {
+	public double calcula(Orcamento orc) {
 		// TODO Auto-generated method stub
-		return (valor*0.006) + 50;
+		return (orc.getValor()*0.006) + 50;
 	}
+
 
 }
