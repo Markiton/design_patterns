@@ -11,17 +11,19 @@ public class TesteOrcamento {
 		Orcamento orc = new Orcamento(5000);
 		orc.adicionaItem(new Item("CANETA", 250));
 		orc.adicionaItem(new Item("LAPIS", 150));
-		Imposto ICC = new ICC(new ISS());
-		Imposto ICPP = new ICPP();
-		Imposto IKCV = new IKCV();
-		
-		CalculadorDeImposto calc = new CalculadorDeImposto();
+
 		CalculadoraDeDescontos calcD = new CalculadoraDeDescontos();
-		calc.calculaImposto(orc, ICC);
-		calc.calculaImposto(orc, ICPP);
-		calc.calculaImposto(orc, IKCV);
+
 		double desc = calcD.calcula(orc);
-		System.out.println(desc);
+		orc.aplicaDescontoExtra();
+		System.out.println(orc.getValor());
+		orc.aprova();
+		orc.aplicaDescontoExtra();
+		System.out.println(orc.getValor());
+		orc.finaliza();
+		orc.aplicaDescontoExtra();
+		System.out.println(orc.getValor()); 
+		
 	}
 
 }
