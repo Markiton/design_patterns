@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.accessibility.AccessibleAction;
+
 import orcamentos.Item;
 
 public class NotaFiscalBuilder {
@@ -14,9 +16,21 @@ public class NotaFiscalBuilder {
     private Calendar dataEmissao;
     private String observacoes;
     private List<Item> itens = new ArrayList<Item>();
+    private List<AcoesEnvio> listaAcoes;
     
+    public NotaFiscalBuilder(){
+    	this.listaAcoes = new ArrayList<AcoesEnvio>();
+    }
     public NotaFiscal builder(){
+    	
+    	for (AcoesEnvio item : this.listaAcoes){
+    		item.executa();
+    	}
     	return new NotaFiscal(razaoSocial, cnpj, dataEmissao, valorBruto, imposto, observacoes, itens);
+    }
+    
+    public void addAcao(AcoesEnvio envios){
+    	this.listaAcoes.add(envios);
     }
     
     public NotaFiscalBuilder paraEmpresa(String nome){
